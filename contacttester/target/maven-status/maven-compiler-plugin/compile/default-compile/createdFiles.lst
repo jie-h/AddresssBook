@@ -1,0 +1,4 @@
+service\ContractService.class
+obj\Contact.class
+obj\ContactDAO.class
+obj\ElasticSearchConfig.class
