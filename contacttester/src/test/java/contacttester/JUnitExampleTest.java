@@ -27,6 +27,8 @@ public class JUnitExampleTest {
 	System.out.println(contact4.getName()+" validation: "+dao.validate(contact4));
 	//test conversion to Json String
 	System.out.println(contact7.getName()+" as JsonString:"+dao.toJsonString(contact7));
+	Contact contact8 = dao.fillContact(dao.toJsonString(contact7));
+	System.out.println(contact8.getName()+" has address "+contact8.getAddress());
 	//test for elasticsearch:
 	//post data
 	System.out.println(contact1.getName()+" post results:"+dao.elasticPost(contact1));

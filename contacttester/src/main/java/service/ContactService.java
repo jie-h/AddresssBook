@@ -47,10 +47,7 @@ public class ContactService {
 		post("/contact", (req, res)->
 		{//		POST/contact
 //			Create contact but name should be unique
-			Contact newContact = new Contact(req.attribute("name"),
-										req.attribute("company"),req.attribute("address"),
-										req.attribute("phone_name"),req.attribute("email"));
-			
+			Contact newContact = dao.fillContact(req.body());
 			//validate new contact
 			String val = dao.validate(newContact);
 			if (val.length()>0)
@@ -81,7 +78,7 @@ public class ContactService {
 		{//		GET/contact/{name}
 //			gets contact based on unique name
 			String name = req.params(":name");
-			
+			res.type("application/json");
 			//use elasticsearch to get find contact
 			res.body(dao.elasticGet(name)) ;	
 			if(!res.body().contains("\"found\":true"))
@@ -95,9 +92,7 @@ public class ContactService {
 		put("/contact/:name", (req, res)->
 		{//		PUT/contact/{name}
 //			update a contact based on name
-			Contact newContact = new Contact(req.attribute("name"),
-					req.attribute("company"),req.attribute("address"),
-					req.attribute("phone_name"),req.attribute("email"));
+			Contact newContact = dao.fillContact(req.body());
 			
 			//validate new contact
 			String val = dao.validate(newContact);

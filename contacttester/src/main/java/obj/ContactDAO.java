@@ -82,6 +82,71 @@ public class ContactDAO
         "}";
 		}
 		
+		public Contact fillContact(String body)
+		{
+			int startind=0;
+			int endind=0;
+			String name, company, address, phone,email;
+			
+			startind = body.indexOf("\"name\":\"", startind);
+			endind = body.indexOf("\"", startind+8);
+			if(startind < 0)
+			{
+				name = "";
+			}
+			else
+			{
+				name = body.substring(startind+8, endind);
+			}
+			
+			startind = body.indexOf("\"company\":\"", 0);
+			endind = body.indexOf("\"", startind+11);
+			if(startind < 0)
+			{
+				company = "";
+			}
+			else
+			{
+				company = body.substring(startind+11, endind);
+			}
+			
+			startind = body.indexOf("\"address\":\"", 0);
+			endind = body.indexOf("\"", startind+11);
+			if(startind < 0)
+			{
+				address = "";
+			}
+			else
+			{
+				address = body.substring(startind+11, endind);
+			}
+			
+			startind = body.indexOf("\"phone_number\":\"", 0);
+			endind = body.indexOf("\"", startind+16);
+			if(startind < 0)
+			{
+				phone = "";
+			}
+			else
+			{
+				phone = body.substring(startind+16, endind);
+			}
+			
+			startind = body.indexOf("\"email\":\"", 0);
+			endind = body.indexOf("\"", startind+9);
+			if(startind < 0)
+			{
+				email = "";
+			}
+			else
+			{
+				email = body.substring(startind+9, endind);
+			}
+			
+			return new Contact(name,company,address,phone,email);
+		}
+		
+		
 		public String elasticGet(String contact)
 		{
 			String resp = "";
