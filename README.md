@@ -1,14 +1,12 @@
-# AddresssBook
-
 This was done as a "Coding Challenge" that was done in around 11 hours for an interview process with a company.
 Below were the requirements:
 
-*Address Book API
+#Address Book API
 We would like you to build a RESTful API for an address book with an Elasticsearch data store.  
 
 A RESTful API is one that exposes it's interface over HTTP, and follows standard conventions for how data should be retrieved.
 
-*Spec Definition
+#Spec Definition
 
 The form of the endpoint spec will be defined as:
 
@@ -38,7 +36,7 @@ Each endpoint should have a defined input and output, and should make sense to t
 
 
 
-*API Definition
+#API Definition
 
 So for this API, the endpoints (aka methods) that we want in the api are as follows:
 
@@ -62,11 +60,11 @@ DELETE /contact/{name}
 
 This endpoint should delete the contact by a unique name (and should error if not found)
 
-*Testability
+#Testability
 The application you build should be testable.  It should be structured in a way to allow for easy verification of all logic (think functions vs methods).  
 Technical Requirements
 
-The following define what is expected and what the constraints are:
+#Expections and Constraints
 
 The project should be hosted in a repository on github
 You can implement this problem in any language you desire.
@@ -77,8 +75,7 @@ The host/port for the elasticsearch server should be configurable to allow an ev
 The code should have automated unit tests (i.e. additional code you write) verifying the storage/retrieval aspect of the code (you do not need to test the REST request handlers) and any business logic that was added.  This means there should be a layer of separation between the REST handler and your actual logic
 
 
-Use one of the following:
-Java
+Java 
 Spark - A simple JVM based framework for web backends
 Elasticsearch - The primary elasticsearch API
 JUnit - The standard Java unit testing framework
