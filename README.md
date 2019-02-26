@@ -3,6 +3,7 @@ This was done as a "Coding Challenge" that was done in around 11 hours for an in
 Below were the requirements:
 
 #Address Book API
+
 We would like you to build a RESTful API for an address book with an Elasticsearch data store.  
 
 A RESTful API is one that exposes it's interface over HTTP, and follows standard conventions for how data should be retrieved.
